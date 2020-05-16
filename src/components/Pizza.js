@@ -7,10 +7,10 @@ import './Pizza.css';
 
 
 const formSchema = yup.object().shape({
-    name: yup.string().min(2, "Name must be a minimum of 2 characters"),
-    size: yup.string().oneOf(["S", "M", "L", "XL", "XXL", "Please Select a Size"]),
+    name: yup.string().min(2).required("Name must be a minimum of 2 characters"),
+    size: yup.string().oneOf(["S", "M", "L", "XL", "XXL"], "Please Select a Size"),
     how_many: yup.number().min(1).required("How many pies would you like?"),
-    special_instructions: yup.string().required("Any instructions you'd like to add?")
+    special_instructions: yup.string()
 });
 
 // styling
@@ -120,6 +120,7 @@ export default function Pizza() {
                    value={formState.name}
                    onChange={inputChange}
                    />
+                     {errors.name.length > 0 ? (<p className="error">{errors.name}</p>)  : null}
                </label>
                <br />
                <label htmlFor="size">
@@ -133,7 +134,7 @@ export default function Pizza() {
                        <option value="XL">XL</option>
                        <option value="XXL">XXL</option>
                    </select>
-                   {errors.size.length > 0 ? <p className="error">{errors.size}</p> : null}
+                   {errors.size.length > 0 ? (<p className="error">{errors.size}</p>)  : null}
                </label>
                <br />
                <label htmlFor="toppings" className="toppings">
@@ -203,7 +204,7 @@ export default function Pizza() {
                    step="1"
                    value={formState.how_many}
                    onChange={inputChange} />
-                   {errors.how_many === 0 ? (
+                   {errors.how_many > 0 ? (
                        <p className="error">{errors.how_many}</p>) : null}
                </label>
                <br />
