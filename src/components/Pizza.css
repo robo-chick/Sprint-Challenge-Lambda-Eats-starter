@@ -1,0 +1,40 @@
+a {
+    color: firebrick;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+a:visited {
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+    color: white;
+}
+
+textarea {
+    margin-left: 1%;
+}
+
+.how_many {
+    margin-left: 1%;
+}
+.error {
+    color: tomato;
+}
+
+button {
+    background-color: firebrick;
+    border: 1px solid firebrick;
+    border-radius: 2px;
+    color: white;
+    height: 5vh;
+}

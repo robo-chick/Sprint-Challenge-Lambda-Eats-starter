@@ -1,0 +1,29 @@
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pizzaImg {
+    overflow: hidden;
+    width: 100%;
+}
+
+.title {
+   position: relative;
+   text-align: center;
+   color: firebrick;
+   font-family: 'Balsamiq Sans', cursive;
+}
+
+.orderBtn {
+    position: relative;
+    text-align: center;
+    background-color: firebrick;
+    border: 1px solid firebrick;
+    border-radius: 2px;
+    color: white;
+    width: 10%;
+    height: 5vh;
+    margin: 2%;
+}
